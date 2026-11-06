@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10100f">
+  <title>Sushi Mir — Суші, які закохують</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="announcement">СВІЖІ СУШІ ЩОДНЯ <span>✦</span> ГОТУЄМО ПІСЛЯ ЗАМОВЛЕННЯ</div>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">鮨</span><span>SUSHI <b>MIR</b><small>ROLLS • LOVE • REPEAT</small></span></a>
+    <nav><a href="#menu">Меню</a><a href="#about">Про нас</a><a href="#contacts">Контакти</a></nav>
+    <button class="cart-trigger" id="cartOpen">Кошик <span id="cartCount">0</span></button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><i></i> МІСЦЕ, ДЕ НАРОДЖУЄТЬСЯ СМАК</div>
+        <h1>Твій настрій.<br><em>Твої суші.</em></h1>
+        <p>Свіжі інгредієнти, ідеальний рис і любов у кожному шматочку. Обирай улюблене — ми вже готуємо.</p>
+        <a class="primary-link" href="#menu">Обрати меню <span>↗</span></a>
+        <div class="hero-meta"><span>✦ Свіжі продукти</span><span>✦ Ручна робота</span></div>
+      </div>
+      <div class="hero-art"><div class="hero-glow"></div><img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66a?auto=format&fit=crop&w=1100&q=85" alt="Сет суші"><div class="hero-stamp">SUSHI<br>TIME <b>✦</b></div><div class="hero-caption">MADE WITH LOVE / SUSHI MIR</div></div>
+    </section>
+    <section class="menu-section" id="menu">
+      <div class="section-head"><div><div class="eyebrow"><i></i> НАШЕ МЕНЮ</div><h2>Знайди свій <em>смак</em></h2></div><div class="menu-note">Обирай те, що сьогодні<br>зробить твій день кращим.</div></div>
+      <div class="filters" id="filters"><button class="filter active" data-filter="Усі">Усі позиції</button><button class="filter" data-filter="Роли">Роли</button><button class="filter" data-filter="Сети">Сети</button><button class="filter" data-filter="Запечені">Запечені</button><button class="filter" data-filter="Інше">Інше</button></div>
+      <div id="products" class="product-grid"><div class="loading">Завантажуємо меню<span>•••</span></div></div>
+    </section>
+    <section class="about" id="about"><div class="about-symbol">鮨</div><div><div class="eyebrow"><i></i> SUSHI MIR — ЦЕ БІЛЬШЕ, НІЖ СУШІ</div><h2>Смак, до якого<br><em>хочеться повертатись.</em></h2><p>Ми віримо, що хороша їжа починається з якісних продуктів і уваги до деталей. Саме так створюємо кожне замовлення.</p></div><div class="about-number"><strong>01</strong><span>Свіжо.<br>Смачно.<br>З любов’ю.</span></div></section>
+  </main>
+  <footer id="contacts"><a class="brand" href="#"><span class="brand-mark">鮨</span><span>SUSHI <b>MIR</b><small>ROLLS • LOVE • REPEAT</small></span></a><p>Суші, що створюють настрій.</p><span>© 2026 SUSHI MIR</span></footer>
+
+  <div class="drawer-backdrop" id="backdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-head"><div><div class="eyebrow"><i></i> ТВОЄ ЗАМОВЛЕННЯ</div><h3>Кошик</h3></div><button class="icon-btn" id="cartClose">✕</button></div>
+    <div id="cartItems" class="cart-items"><p class="empty">Тут поки порожньо 🍣</p></div>
+    <div class="cart-total"><span>Разом</span><strong id="cartTotal">0 ₴</strong></div>
+    <button class="checkout-btn" id="checkoutOpen">Оформити замовлення <span>↗</span></button>
+  </aside>
+
+  <div class="modal-backdrop" id="checkoutBackdrop">
+    <section class="checkout-modal">
+      <button class="icon-btn modal-close" id="checkoutClose">✕</button>
+      <div class="eyebrow"><i></i> ЩЕ ТРОХИ — І СМАКУЄМО</div><h2>Оформити <em>замовлення</em></h2>
+      <form id="orderForm">
+        <label>Твоє ім’я<input name="name" required maxlength="70" placeholder="Як до тебе звертатись?"></label>
+        <label>Номер телефону<input name="phone" required type="tel" maxlength="30" placeholder="+380 __ ___ __ __"></label>
+        <label>Telegram нік <small>(необов’язково)</small><input name="telegram" maxlength="50" placeholder="@username"></label>
+        <fieldset><legend>Як отримаєш замовлення?</legend><label class="radio"><input type="radio" name="fulfillment" value="З собою" checked> Заберу з собою</label><label class="radio"><input type="radio" name="fulfillment" value="У закладі"> У закладі</label></fieldset>
+        <label>Коментар до замовлення<textarea name="comment" rows="3" maxlength="500" placeholder="Побажання, час, деталі..."></textarea></label>
+        <div class="form-total"><span>До сплати</span><strong id="formTotal">0 ₴</strong></div>
+        <button class="checkout-btn" type="submit" id="submitOrder">Підтвердити замовлення <span>↗</span></button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body></html>
